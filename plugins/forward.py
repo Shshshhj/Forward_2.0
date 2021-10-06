@@ -67,7 +67,7 @@ async def forward(bot, message):
             file_id=msg.id
             message_id=msg.message_id
             methord = msg.methord
-            caption = msg.caption
+            caption = msg.file_name
             file_type = msg.file_type
             chat_id=Config.TO_CHANNEL
             if methord == "bot":
@@ -76,7 +76,7 @@ async def forward(bot, message):
                         await bot.send_cached_media(
                             chat_id=chat_id,
                             file_id=file_id,
-                            caption=caption
+                            caption=msg.file_name
                             )
                     else:
                         await bot.copy_message(
